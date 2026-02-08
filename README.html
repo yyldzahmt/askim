@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hayatımı Güzelleştiren Kadına Özel ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100svh;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Playfair Display',serif;
+  overflow:hidden;
+}
+
+/* ZARF */
+.envelope{
+  width:360px;
+  height:240px;
+  background:#fff;
+  border-radius:10px;
+  position:absolute;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  cursor:pointer;
+  z-index:10;
+}
+.envelope .flap{
+  position:absolute;
+  inset:0;
+  background:#f2f2f2;
+  clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);
+  transform-origin:top;
+  transition:transform 1s ease;
+}
+.envelope.open .flap{
+  transform:rotateZ(180deg);
+}
+.envelope.hide{
+  animation:envelopeOut .8s ease forwards;
+}
+@keyframes envelopeOut{
+  to{opacity:0;transform:scale(.8);pointer-events:none}
+}
+
+/* DEFTER */
+.book{
+  width:540px;
+  height:760px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,140%);
+  perspective:2600px;
+  transition:transform 1.3s ease;
+}
+.envelope.open ~ .book{
+  transform:translate(-50%,-50%);
+}
+
+/* SAYFALAR */
+.page{
+  position:absolute;
+  inset:0;
+  background:#fffdf8;
+  border-radius:18px;
+  padding:46px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  transform-origin:left center;
+  transition:transform 1s ease;
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+  backface-visibility:hidden;
+  cursor:pointer;
+}
+.page::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:32px;
+  height:100%;
+  background:linear-gradient(to left,rgba(0,0,0,.18),transparent);
+  border-radius:0 18px 18px 0;
+}
+.page.flipped{
+  transform:rotateY(-180deg);
+}
+
+.page h1{
+  color:#c9184a;
+  font-size:28px;
+  margin-bottom:18px
+}
+.page p{
+  font-size:18px;
+  line-height:1.75
+}
+
+.page:nth-child(1){z-index:8}
+.page:nth-child(2){z-index:7}
+.page:nth-child(3){z-index:6}
+.page:nth-child(4){z-index:5}
+.page:nth-child(5){z-index:4}
+.page:nth-child(6){z-index:3}
+.page:nth-child(7){z-index:2}
+.page:nth-child(8){z-index:1}
+
+/* KALPLER */
+.heart{
+  position:absolute;
+  font-size:24px;
+  animation:floatSoft linear forwards;
+  pointer-events:none;
+}
+
+@keyframes floatSoft{
+  0%{transform:translate(0,0);opacity:0}
+  10%{opacity:1}
+  100%{
+    transform:translate(
+      calc(-20px + 40px * var(--x)),
+      -60px
+    );
+    opacity:0;
+  }
+}
+
+/* iOS clip-path fallback */
+@supports not (clip-path: polygon(0 0, 100% 0, 50% 50%)) {
+  .envelope .flap{
+    clip-path:none;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="flipSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-page-flip-1104.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" id="envelope">
+  <div class="flap"></div>
+</div>
+
+<div class="book">
+
+<div class="page">
+<h1>Merhaba Aşkım ❤️</h1>
+<p>
+Bu defteri sana yazarken içim biraz heyecanlı, biraz da çok dolu.
+Ne yazacağımı bilip bilmemek arasında gidip geliyorum.
+Bazen duygularımı anlatırken zorlanıyorum ama bu sefer kelimelerin
+arkasına saklanmadan, içimden geldiği gibi yazmak istedim.
+
+Çünkü sen bunu hak ediyorsun.
+Kalbimde olanları olduğu gibi bilmeyi,
+satır aralarında değil doğrudan hissetmeyi hak ediyorsun.
+Bu sayfalarda belki kusursuz cümleler yok
+ama hepsi tamamen sana ait.
+</p>
+</div>
+
+<div class="page">
+<h1>Sana Olan Hislerim ✨</h1>
+<p>
+Seni tanıdıkça sana karşı olan hislerim hiç azalmadı,
+aksine her gün biraz daha büyüdü.
+
+Zamanla kalbimi tamamen sana bıraktım.
+Düşüncelerimde, dualarımda, hayallerimde
+kendiliğinden yer aldın.
+
+Şu an çok net söyleyebilirim:
+Sana gerçekten çok âşığım.
+Bu geçici bir his değil,
+içime yerleşmiş, sakin ama çok güçlü bir duygu.
+</p>
+</div>
+
+<div class="page">
+<h1>Sana Hayranım 💕</h1>
+<p>
+Gülüşün, konuşman, bazen sessizliğin…
+Hepsi beni etkiliyor.
+Bazen sadece seni izlemek bile yetiyor,
+o anlarda zaman durmuş gibi hissediyorum.
+
+Seni izlerken içimden
+“sen ne kadar çok güzelsin” demeden duramıyorum.
+Sadece dış görünüşün değil,
+kalbin, düşüncelerin ve hayata bakışın da inanılmaz güzel.
+</p>
+</div>
+
+<div class="page">
+<h1>Neden Bu Kadar Seviyorum 💖</h1>
+<p>
+Yanındayken kendimi güvende hissediyorum.
+Dünyanın bütün karmaşası bir anda susuyor.
+Aklım sakinleşiyor, kalbim rahatlıyor.
+
+Sen benim için sadece sevdiğim biri değilsin,
+aynı zamanda huzurum,
+en güzel alışkanlığım,
+en değerli duygumsun.
+</p>
+</div>
+
+<div class="page">
+<h1>Kalbimdeki Yerinin Tarifi Yok 💗</h1>
+<p>
+Seni sevmenin belirli bir sebebi yok.
+Bu bir his ve bu his her geçen gün
+daha da derinleşiyor.
+
+Kalbimde sana ait çok özel bir yer var
+ve orası sadece sana ait.
+</p>
+</div>
+
+<div class="page">
+<h1>Gelecek Hayalim ✨</h1>
+<p>
+Seninle bir yuva kurmayı hayal ediyorum.
+Evlilik kelimesi gözümü korkutmuyor,
+aksine seninle anlam kazanıyor.
+Aynı hayatı paylaşmak hayalim.
+</p>
+</div>
+
+<div class="page">
+<h1>Her Şey Senin İçin ❤️</h1>
+<p>
+❤️ 14 Şubat 2026 ❤️<br><br>
+Bu defter sadece birkaç sayfa değil,
+kalbimin bir parçası.
+Seni çok seviyorum.
+</p>
+</div>
+
+</div>
+
+<script>
+const envelope = document.getElementById("envelope");
+const pages = document.querySelectorAll(".page");
+const sound = document.getElementById("flipSound");
+
+let current = 0;
+let opened = false;
+
+envelope.addEventListener("click",()=>{
+  if(opened) return;
+  opened = true;
+
+  try{
+    sound.currentTime = 0;
+    sound.play();
+  }catch(e){}
+
+  envelope.classList.add("open");
+  setTimeout(()=>envelope.classList.add("hide"),1300);
+});
+
+pages.forEach((page,i)=>{
+  page.addEventListener("click",()=>{
+    if(!opened || i !== current) return;
+
+    page.classList.add("flipped");
+
+    try{
+      sound.currentTime = 0;
+      sound.play();
+    }catch(e){}
+
+    hearts(20);
+    current++;
+  });
+});
+
+function hearts(count){
+  for(let i=0;i<count;i++){
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = ["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+    h.style.left = Math.random()*100+"%";
+    h.style.top = Math.random()*100+"%";
+    h.style.animationDuration = (4 + Math.random()*2)+"s";
+    h.style.setProperty("--x",Math.random());
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  }
+}
+</script>
+
+</body>
+</html>
